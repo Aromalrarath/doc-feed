@@ -1,0 +1,116 @@
+<div id="wrapper" class="flex flex-col justify-between h-screen">
+
+    <!-- header-->
+    <div class="bg-white py-4 shadow dark:bg-gray-800">
+        <div class="max-w-6xl mx-auto">
+
+
+            <div class="flex items-center lg:justify-between justify-around">
+
+                <a href="trending.html" class="row">
+                    <img src="assets/images/td.png" alt="" width="50px">
+                    <span class="ml-1 mt-3" style="font-weight: bold; font-size: 20px;">DOCFEED</span>
+                </a>
+
+                <div class="capitalize flex font-semibold hidden lg:block my-2 space-x-3 text-center text-sm">
+                    <a href="/login" class="bg-purple-500 purple-500 px-6 py-3 rounded-md shadow text-white">Login</a>
+                    <a href="/register" class="py-3 px-4">Register</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Content-->
+    <div>
+        <div class="lg:p-12 max-w-xl lg:my-0 my-12 mx-auto p-6 space-y-">
+            <form class="lg:p-10 p-6 space-y-3 relative bg-white shadow-xl rounded-md" [formGroup]="form">
+                <h1 class="lg:text-2xl text-xl font-semibold mb-6"> Register </h1>
+
+                <div class="grid lg:grid-cols-2 gap-3">
+                    <div>
+                        <label class="mb-0"> First Name </label>
+                        <input type="text" formControlName="firstName" placeholder="Your Name"
+                            class="bg-gray-100 h-12 mt-2 px-3 rounded-md w-full">
+                    </div>
+                    <div>
+                        <label class="mb-0"> Last Name </label>
+                        <input type="text" formControlName="lastName" placeholder="Last  Name"
+                            class="bg-gray-100 h-12 mt-2 px-3 rounded-md w-full">
+                    </div>
+                </div>
+                <div>
+                    <label class="mb-0"> User Name </label>
+                    <input type="text" formControlName="username" placeholder="Username"
+                        class="bg-gray-100 h-12 mt-2 px-3 rounded-md w-full">
+                </div>
+                <div>
+                    <label class="mb-0"> Email Address </label>
+                    <input type="email" formControlName="email" placeholder="Info@example.com"
+                        class="bg-gray-100 h-12 mt-2 px-3 rounded-md w-full">
+                        <p *ngIf="form.value.email && this.form.controls.email.invalid" 
+                        class="form-invalid">Email is not correcct.</p>
+                </div>
+                <div>
+                    <label class="mb-0"> Password </label>
+                    <input type="password" placeholder="******" class="bg-gray-100 h-12 mt-2 px-3 rounded-md w-full" 
+                    [(ngModel)]="fPwd" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div>
+                    <label class="mb-0"> Confirm Password </label>
+                    <input type="password" formControlName="password" placeholder="******"
+                        class="bg-gray-100 h-12 mt-2 px-3 rounded-md w-full">
+                        <p *ngIf="fPwd && form.value.password && fPwd!=form.value.password" 
+                        class="form-invalid">Your password and confirmation password do not match.</p>
+                </div>
+                <div>
+                    <label class="mb-0"> Phone </label>
+                    <input type="text" formControlName="mobile" placeholder="9879865464"
+                        class="bg-gray-100 h-12 mt-2 px-3 rounded-md w-full">
+                </div>
+                <!-- <div class="grid lg:grid-cols-2 gap-3">
+                    <div>
+                        <label class="mb-0"> Gender </label>
+                        <select class="selectpicker mt-2">
+                            <option>Male</option>
+                            <option>Female</option>
+                        </select>
+
+                    </div>
+                    <div>
+                        <label class="mb-0"> Phone: optional  </label>
+                        <input type="text" formControlName="firstName" placeholder="9879865464" class="bg-gray-100 h-12 mt-2 px-3 rounded-md w-full">
+                    </div>
+                </div> -->
+
+                <!-- <div class="checkbox">
+                    <input type="checkbox" id="chekcbox1" checked="">
+                    <label for="chekcbox1"><span class="checkbox-icon"></span> I agree to the <a href="pages-terms.html" target="_blank" class="uk-text-bold uk-text-small uk-link-reset"> Terms and Conditions </a>
+                    </label>
+                </div> -->
+
+                <div>
+                    <button type="button" [disabled]="form.invalid" (click)="signup()"
+                        class="bg-blue-600 font-semibold p-2 mt-5 rounded-md text-center text-white w-full">
+                        Sign Up</button>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+
+    <div class="lg:mb-5 py-3 uk-link-reset">
+        <div class="flex flex-col items-center justify-between lg:flex-row max-w-6xl mx-auto lg:space-y-0 space-y-3">
+            <div class="flex space-x-2 text-gray-700 uppercase">
+                <a href="#"> About</a>
+                <a href="#"> Help</a>
+                <a href="#"> Terms</a>
+                <a href="#"> Privacy</a>
+            </div>
+        </div>
+    </div>
+
+</div>

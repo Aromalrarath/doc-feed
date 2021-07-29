@@ -19,8 +19,13 @@
     "@angular/platform-browser": "~11.2.9",
     "@angular/platform-browser-dynamic": "~11.2.9",
     "@angular/router": "~11.2.9",
+    "@ctrl/ngx-emoji-mart": "^6.0.0",
+    "mobx": "^6.3.2",
+    "mobx-angular": "^4.3.0",
+    "ngx-emoji-picker": "0.0.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
+    "twemoji": "^13.1.0",
     "zone.js": "~0.11.3"
   },
   "devDependencies": {
