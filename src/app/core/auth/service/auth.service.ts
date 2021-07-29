@@ -39,6 +39,15 @@ export class AuthService {
     ));
   }
 
+  fetchUser(){
+    return this._http.get('/users/'+(this._jwtService.getUser()?this._jwtService.getUser():AuthStore.userId?AuthStore.userId:AuthStore.user?.id?AuthStore.user?.id:'')).pipe(
+      map((res: User) => {
+          AuthStore.setUser(res);
+          return res;
+      }),
+    );
+  }
+
   // Verify JWT in localstorage with server & load user's info.
     // This runs once on application startup.
     populate() {

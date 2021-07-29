@@ -16,6 +16,9 @@ class Store {
 
     @observable
     userId: number;
+
+    @observable
+    loaded: boolean = false;
     
     @computed
     get isAuthenticated() {
@@ -30,6 +33,7 @@ class Store {
     @action
     setUser(user: User) {
         this.user = user;
+        this.loaded = true;
     }
 
     @action

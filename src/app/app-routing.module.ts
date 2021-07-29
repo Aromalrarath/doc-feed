@@ -31,7 +31,7 @@ const routes: Routes = [
       {
         path: 'chats',
         loadChildren: () => import('./modules/chat/chat.module').then(m => m.ChatModule),
-        data: { core: { title: 'Pages' } }
+        data: { core: { title: 'Chats' } }
       },
       {
         path: 'feeds',
@@ -46,7 +46,17 @@ const routes: Routes = [
       {
         path: 'videos',
         loadChildren: () => import('./modules/videos/videos.module').then(m => m.VideosModule),
-        data: { core: { title: 'Pages' } }
+        data: { core: { title: 'Videos' } }
+      },
+      {
+        path: 'profile',
+        loadChildren: () => import('./modules/profile/profile.module').then(m => m.ProfileModule),
+        data: { core: { title: 'Profile' } }
+      },
+      {
+        path: 'timeline',
+        loadChildren: () => import('./modules/timeline/timeline.module').then(m => m.TimelineModule),
+        data: { core: { title: 'Timeline' } }
       },
     ]
   }

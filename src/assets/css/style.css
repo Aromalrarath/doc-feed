@@ -9537,3 +9537,8 @@ button[disabled]{
   color: red;
   font-size: 12px;
 }
+
+textarea.bg-gray-100 {
+  padding: 10px;
+  color: #808080;
+}

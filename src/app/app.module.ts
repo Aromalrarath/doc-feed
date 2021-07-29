@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { SnackbarModule } from 'ngx-snackbar';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { RouterModule } from '@angular/router';
     BrowserAnimationsModule,
     HttpClientModule,
     CoreModule,
+    SnackbarModule.forRoot(),
   ],
   schemas:[CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

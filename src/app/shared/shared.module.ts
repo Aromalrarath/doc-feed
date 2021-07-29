@@ -8,6 +8,8 @@ import { ChatToggleComponent } from './chat-toggle/chat-toggle.component';
 import { PickerModule } from '@ctrl/ngx-emoji-mart';
 import { NgxEmojiPickerModule } from "ngx-emoji-picker";
 import { EmojiComponent } from './emoji/emoji.component';
+import { ToastrModule } from "ngx-toastr";
+import { BrowserModule } from "@angular/platform-browser";
 
 
 @NgModule({
@@ -17,7 +19,14 @@ import { EmojiComponent } from './emoji/emoji.component';
         FormsModule,
         ReactiveFormsModule,
         PickerModule,
-        NgxEmojiPickerModule
+        NgxEmojiPickerModule,
+        ToastrModule.forRoot({
+            timeOut: 2000,
+            positionClass: 'toast-bottom-right',
+            preventDuplicates: true,
+            countDuplicates: true,
+            closeButton: true
+        }),
     ],
     declarations:[
         StoryPreviewComponent,
@@ -31,6 +40,7 @@ import { EmojiComponent } from './emoji/emoji.component';
         FormsModule,
         ReactiveFormsModule,
         PickerModule,
+        ToastrModule,
         NgxEmojiPickerModule,
         StoryPreviewComponent,
         CreatePostComponent,

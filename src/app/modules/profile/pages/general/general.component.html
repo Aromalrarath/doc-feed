@@ -1,0 +1,82 @@
+<div class="main_content">
+    <div class="mcontainer">
+
+        <form action="" [formGroup]="form">
+            <div class="mb-6">
+                <h2 class="text-2xl font-semibold"> Setting </h2>
+                <nav class="responsive-nav border-b md:m-0 -mx-4">
+                    <ul uk-switcher="connect: #form-type; animation: uk-animation-fade">
+                        <li><a href="#" class="lg:px-2"> Profile</a></li>
+                        <li><a href="#" class="lg:px-2"> Privacy</a></li>
+                        <li><a href="#" class="lg:px-2"> Notification</a></li>
+                        <li><a href="#" class="lg:px-2"> Social links </a></li>
+                        <li><a href="#" class="lg:px-2"> Billing </a></li>
+                        <li><a href="#" class="lg:px-2"> Security </a></li>
+                    </ul>
+                </nav>
+            </div>
+    
+    
+            <div class="grid lg:grid-cols-3 mt-12">
+                <div class="bg-white rounded-md lg:shadow-md shadow col-span-2">
+    
+                    <div class="grid grid-cols-2 gap-3 lg:p-6 p-4">
+                        <div>
+                            <label for=""> First name</label>
+                            <input type="text" formControlName="firstName" placeholder="Your Name" class="shadow-none with-border">
+                        </div>
+                        <div>
+                            <label for=""> Last name</label>
+                            <input type="text" formControlName="lastName" placeholder="Last  Name" class="shadow-none with-border">
+                        </div>
+                        <div class="col-span-2">
+                            <label for=""> Username</label>
+                            <input type="text" formControlName="username" placeholder="Info@example.com" class="shadow-none with-border">
+                        </div>
+                        <div class="col-span-2">
+                            <label for=""> Email</label>
+                            <input type="text" formControlName="email" placeholder="Info@example.com" class="shadow-none with-border">
+                        </div>
+                        <div class="col-span-2">
+                            <label for=""> Mobile</label>
+                            <input type="text" formControlName="mobile" placeholder="9879865464" class="shadow-none with-border">
+                        </div>
+                        <div class="col-span-2">
+                            <div class="row ml-1">
+                                <label for="about">Introduction <span>({{form?.value.intro != null ?
+                                    form?.value.intro?.length : 0}}
+                                    Characters)</span></label>
+                            </div>
+                            <textarea id="about" name="about" rows="3" formControlName="intro"
+                                class="shadow-none bg-gray-100 with-border"></textarea>
+                        </div>
+                        <div class="col-span-2">
+                            <label for="about">Profile<span>({{form?.value.profile != null ?
+                                form?.value.profile?.length : 0}}
+                                Characters)</span></label>
+                            <textarea id="about" type="text" name="about" rows="3" formControlName="profile"
+                                class="shadow-none bg-gray-100 with-border"></textarea>
+                        </div>
+                        <!-- <div>
+                            <label for=""> Relationship </label>
+                            <select id="relationship" name="relationship" class="shadow-none selectpicker with-border ">
+                                <option value="0">None</option>
+                                <option value="1">Single</option>
+                                <option value="2">In a relationship</option>
+                                <option value="3">Married</option>
+                                <option value="4">Engaged</option>
+                            </select>
+                        </div> -->
+                    </div>
+    
+                    <div class="bg-gray-10 p-6 pt-0 flex justify-end space-x-3">
+                        <button class="p-2 px-4 rounded bg-gray-50 text-red-500"> Cancel </button>
+                        <button type="button" (click)="updateUserDetails()" class="button bg-blue-700"> Save </button>
+                    </div>
+    
+                </div>
+    
+            </div>
+        </form>
+    </div>
+</div>
