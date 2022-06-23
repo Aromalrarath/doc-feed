@@ -17,7 +17,6 @@ export class LoggedOutGuard implements CanActivate {
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
         if (!this._jwtService.getToken()) {
-            console.log("auth",this._jwtService.getToken(),window.localStorage.jwtToken)
             this._jwtService.setObservableToken(null);
             this._authService.purgeAuth();
             return of(true);

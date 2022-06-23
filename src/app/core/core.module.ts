@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 import { SharedModule } from "../shared/shared.module";
 import { ApiBasePathInterceptor } from "./auth/interceptors/apiBasePath-interceptors";
+import { ErrorHandlerInterceptor } from "./auth/interceptors/error-handler.interceptor";
 import { HeaderInterceptor } from "./auth/interceptors/header.interceptor";
 import { FooterComponent } from "./layouts/footer/footer.component";
 import { HeaderComponent } from "./layouts/header/header.component";
@@ -27,6 +28,7 @@ import { RightNavBarComponent } from "./layouts/right-nav-bar/right-nav-bar.comp
     providers:[
       { provide: HTTP_INTERCEPTORS, useClass: ApiBasePathInterceptor, multi: true },
       { provide: HTTP_INTERCEPTORS, useClass: HeaderInterceptor, multi: true },
+      { provide: HTTP_INTERCEPTORS, useClass: ErrorHandlerInterceptor, multi: true },
     ],
     schemas:[CUSTOM_ELEMENTS_SCHEMA],
 })

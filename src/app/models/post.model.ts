@@ -4,7 +4,9 @@ export interface Post {
     description: string,
     createdAt: string,
     updatedAt: string,
-    status: 1
+    status: 1,
+    firstname: string
+    lastname: string
 }
 
 export interface PostResponse {

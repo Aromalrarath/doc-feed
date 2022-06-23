@@ -5,6 +5,7 @@ import { map, catchError } from 'rxjs/operators';
 import { JwtToken } from 'src/app/models/auth.model';
 import { User } from 'src/app/models/user.model';
 import { AuthStore } from 'src/app/store/auth.store';
+import { UtilityService } from '../../services/utility.service';
 import { JwtService } from './jwt.service';
 
 @Injectable({
@@ -14,7 +15,8 @@ export class AuthService {
 
   constructor(
     private _http: HttpClient,
-    private _jwtService:JwtService
+    private _jwtService:JwtService,
+    private _utilityservice: UtilityService
   ) { }
 
   registerUser(userData):Observable<User>{
@@ -22,6 +24,9 @@ export class AuthService {
     .pipe(map(
         (res: User) => {
             console.log(res);
+            if(res){
+              this._utilityservice.showSuccessMessage('Successs','User registered seccessfully !')
+            }
             return res;
         }
     ));

@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --port 5000",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -22,12 +22,15 @@
     "@ctrl/ngx-emoji-mart": "^6.0.0",
     "mobx": "^6.3.2",
     "mobx-angular": "^4.3.0",
+    "ngx-cookie": "^5.0.2",
+    "ngx-cookie-service": "^13.1.2",
     "ngx-emoji-picker": "0.0.2",
     "ngx-snackbar": "^2.0.1",
     "ngx-toastr": "^14.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "twemoji": "^13.1.0",
+    "uikit": "^3.7.1",
     "zone.js": "~0.11.3"
   },
   "devDependencies": {

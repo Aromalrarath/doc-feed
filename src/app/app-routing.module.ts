@@ -58,6 +58,11 @@ const routes: Routes = [
         loadChildren: () => import('./modules/timeline/timeline.module').then(m => m.TimelineModule),
         data: { core: { title: 'Timeline' } }
       },
+      {
+        path: 'users',
+        loadChildren: () => import('./modules/users/users.module').then(m => m.UsersModule),
+        data: { core: { title: 'Users' } }
+      },
     ]
   }
 ];

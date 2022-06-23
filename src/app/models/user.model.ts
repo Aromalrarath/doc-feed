@@ -13,3 +13,25 @@ export interface User {
     profile: string
     token: string
 }
+
+export interface UserList {
+    data:User[]
+}
+
+export interface Request {
+    id: number,
+    sourceId: number,
+    targetId: number,
+    type: string,
+    status: number,
+    createdAt: string,
+    updatedAt: string,
+    notes: string,
+    firstname:string
+    lastname:string
+    username:string
+}
+
+export interface RequestList {
+    data:Request[]
+}

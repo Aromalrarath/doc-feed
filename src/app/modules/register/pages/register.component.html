@@ -7,9 +7,9 @@
 
             <div class="flex items-center lg:justify-between justify-around">
 
-                <a href="trending.html" class="row">
+                <a href="/login" class="row">
                     <img src="assets/images/td.png" alt="" width="50px">
-                    <span class="ml-1 mt-3" style="font-weight: bold; font-size: 20px;">DOCFEED</span>
+                    <span class="ml-1 mt-3" style="font-weight: bold; font-size: 20px;">SNS</span>
                 </a>
 
                 <div class="capitalize flex font-semibold hidden lg:block my-2 space-x-3 text-center text-sm">
@@ -47,7 +47,7 @@
                 <div>
                     <label class="mb-0"> Email Address </label>
                     <input type="email" formControlName="email" placeholder="Info@example.com"
-                        class="bg-gray-100 h-12 mt-2 px-3 rounded-md w-full">
+                        class="bg-gray-100 h-12 mt-2 px-3 rounded-md w-full" autocomplete="new-text">
                         <p *ngIf="form.value.email && this.form.controls.email.invalid" 
                         class="form-invalid">Email is not correcct.</p>
                 </div>

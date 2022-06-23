@@ -3,5 +3,6 @@ export interface JwtToken {
     message:string,
     token_type?:string,
     expires_at?:string,
-    id?:number
+    id?:number,
+    code:number
 }

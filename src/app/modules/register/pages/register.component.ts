@@ -30,9 +30,16 @@ export class RegisterComponent implements OnInit {
 
   signup(){
     console.log(this.form)
-    // this._authService.registerUser(this.form.value).subscribe(res=>{
+    this._authService.registerUser(this.form.value).subscribe(res=>{
+      if(res){
+        this.resetForm()
+      }
+    })
+  }
 
-    // })
+  resetForm(){
+    this.form.reset()
+    this.form.pristine
   }
 
 }

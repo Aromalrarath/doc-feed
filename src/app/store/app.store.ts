@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 class Store {
 
     @observable
-    title: string = 'Docfeed';
+    title: string = 'SNS';
 
     @observable
     noContentText: string = 'NA';
@@ -16,6 +16,23 @@ class Store {
     previousUrl: string = null;
 
     currentUrl: string = null;
+
+    dateFormat = [
+        // { title: "shortDate", value: "M/d/yy" },
+        { title: "mediumDate", value: "MMM d, y" },
+        // { title: "longDate", value: "MMMM d, y" },
+        // { title: "dd/MM/yy", value: "dd/MM/yy" },
+        // { title: "fullDate", value: "EEEE, MMMM d, y" }
+    ]
+    
+      // time formate object
+      timeFormat = [
+        { title: "short", value: "M/d/yy, h:mm a" },
+        { title: "medium", value: "MMM d, y, h:mm:ss a" },
+        { title: "long", value: "MMMM d, y, h:mm:ss a z" },
+        { title: "dd/MM/yyyy hh:mm:ss", value: "dd/MM/yyyy hh:mm:ss"},
+        { title: "full", value: "EEEE, MMMM d, y, h:mm:ss a zzzz" },
+      ]
 
     //loading
     @observable
@@ -31,13 +48,18 @@ class Store {
     }
 
     @action
+    dateFormate() {
+        return this.dateFormat[0].title
+    }
+
+    @action
     disableLoading() {
         this.loading = false;
     }
 
     @action
     setTitle(title: string) {
-        if (title) this.title = `${title.trim()} Docfeed`;
+        if (title) this.title = `${title.trim()} SNS`;
     }
 
     @action

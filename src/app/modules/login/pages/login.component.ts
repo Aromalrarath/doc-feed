@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/auth/service/auth.service';
+import { UtilityService } from 'src/app/core/services/utility.service';
 import { AuthStore } from 'src/app/store/auth.store';
 
 @Component({
@@ -17,6 +18,7 @@ export class LoginComponent implements OnInit {
     private _authService:AuthService,
     private _formBuilder:FormBuilder,
     private _router: Router,
+    private _utilityService: UtilityService
   ) { }
 
   ngOnInit(): void {
@@ -28,11 +30,16 @@ export class LoginComponent implements OnInit {
 
   login(){
     this._authService.authLogin(this.form.value).subscribe(res=>{
-      if (AuthStore.redirectUrl) {
-        const url = AuthStore.redirectUrl;
-        AuthStore.setRedirectUrl(null);
-        this._router.navigateByUrl(url);
-      }else this._router.navigateByUrl('/feeds');
+      if(res.code==200){
+        if (AuthStore.redirectUrl) {
+          const url = AuthStore.redirectUrl;
+          AuthStore.setRedirectUrl(null);
+          this._router.navigateByUrl(url);
+        }else this._router.navigateByUrl('/feeds');
+      }else{
+        console.log("Result",res.message)
+        this._utilityService.showErrorMessage('Error',res.message)
+      }
     })
   }
 
